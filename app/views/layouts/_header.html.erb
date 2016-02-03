@@ -4,18 +4,74 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
-            <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "Pasien", '#' %></li>
-              <li><%= link_to "Kunjungan", '#' %></li>
-              <li><%= link_to "RM", '#' %></li>
-              <li><%= link_to "Obat", '#' %></li>
-              <li><%= link_to "Laporan", '#' %></li>
+              <li><%= link_to "Home", home_path %></li>
+              <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Pasien <b class="caret"></b>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Entri Data", new_kartu_rm_path %></li>
+                            <li class="divider"></li>
+                            <li>
+                                <%= link_to "Lihat Data", pasiens_path %>
+                            </li>
+                            </ul>
+              <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Kunjungan <b class="caret"></b>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Entri Data", new_kunjungan_path %></li>
+                            <li class="divider"></li>
+                            <li>
+                                <%= link_to "Lihat Data", kunjungans_path %>
+                            </li>
+                            </ul>
+              <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                RM <b class="caret"></b>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Entri Data", new_rekam_medik_path %></li>
+                            <li class="divider"></li>
+                            <li>
+                                <%= link_to "Lihat Data", rekam_mediks_path %>
+                            </li>
+                            </ul>
+              <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Obat <b class="caret"></b>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Obat Baru", new_obat_path %></li>
+                            <li class="divider"></li>
+                            <li>
+                            <li><%= link_to "Resep", new_resep_path %></li>
+                            <li class="divider"></li>
+                            <li>
+                            <li><%= link_to "Obat Masuk", new_obat_masuk_path %></li>
+                            <li class="divider"></li>
+                            <li>
+                                <%= link_to "Lihat Data", obats_path %>
+                            </li>
+                            </ul>
+              <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Laporan <b class="caret"></b>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "LB1", "#" %></li>
+                            <li class="divider"></li>
+                            <li>
+                                <%= link_to "LB2", "#" %>
+                            </li>
+                            </ul>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Account <b class="caret"></b>
                             </a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to "Settings", '#' %></li>
+                            <li><%= link_to "Settings", edit_admin_path(current_admin) %></li>
                             <li class="divider"></li>
                             <li>
                                 <%= link_to "Log out", logout_path, method: "delete" %>
@@ -23,7 +79,7 @@
                         </ul>
                     </li>
                 <% else %>
-                    <li><%= link_to "Home",   root_path %></li>
+              <li><%= link_to "Home",   home_path %></li>
                     <li><%= link_to "Help",   help_path %></li>
                     <li><%= link_to "Log in", login_path %></li>
                 <% end %>

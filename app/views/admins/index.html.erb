@@ -19,7 +19,7 @@
         <td><%= admin.username %></td>
         <td><%= admin.email %></td>
         <td><%= link_to 'Show', admin %></td>
-        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+          <td><%= link_to 'Edit', setting_path(admin) %></td>
         <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Admin', new_admin_path %>
+<%= link_to 'New Admin', signup_path %>

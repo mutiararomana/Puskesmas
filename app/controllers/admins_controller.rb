@@ -20,6 +20,7 @@ class AdminsController < ApplicationController
 
   # GET /admins/1/edit
   def edit
+      @admin = Admin.find(params[:id])
   end
 
   # POST /admins

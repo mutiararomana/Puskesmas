@@ -1,9 +1,23 @@
 Rails.application.routes.draw do
     
-  root 'static_pages#home'
+  resources :obat_masuks
+  resources :reseps
+  resources :rekam_mediks
+  resources :kunjungans
+  resources :pasiens
+  resources :kartu_rms
+  resources :penyakits
+  resources :kartu_rms
+  resources :obats
+  resources :jenis_penyakits
+  resources :jenis_kartus
+  resources :kelurahans
+  resources :polis
+  resources :kategoris
+    root 'sessions#new'
 
     get '/help' =>'static_pages#help'
-
+    get '/home' =>'static_pages#home'
     get '/signup' => 'admins#new'
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
