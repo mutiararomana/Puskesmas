@@ -1,0 +1,19 @@
+<%= simple_form_for(@obat_masuk) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :obat, selected: params[:nama], label_method: :nama, value_method: :id %>
+    <%= f.input :jumlah_masuk %>
+      <%= f.label :penerimaan %><br>
+      <%= f.radio_button :penerimaan, 'PKD' %> PKD
+      <%= f.radio_button :penerimaan, 'DAK' %> DAK
+      <%= f.radio_button :penerimaan, 'ASK' %> ASK
+      <%= f.radio_button :penerimaan, 'PROGR' %> PROGR
+      <%= f.radio_button :penerimaan, 'POSKEL' %> POSKEL
+      
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

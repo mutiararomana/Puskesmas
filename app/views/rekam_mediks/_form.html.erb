@@ -1,0 +1,16 @@
+<%= simple_form_for(@rekam_medik) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :pasien, selected: params[:no_rm], label_method: :no_rm, value_method: :id %>
+    <%= f.input :nama %>
+    <%= f.input :keluhan %>
+    <%= f.association :penyakit, label_method: :nama %>
+    <%= f.input :terapi %>
+    <%= f.input :tindakan %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Obat:</strong>
+  <%= @obat_masuk.obat.nama %>
+</p>
+
+<p>
+  <strong>Jumlah masuk:</strong>
+  <%= @obat_masuk.jumlah_masuk %>
+</p>
+
+<p>
+  <strong>Penerimaan:</strong>
+  <%= @obat_masuk.penerimaan %>
+</p>
+
+<%= link_to 'Edit', edit_obat_masuk_path(@obat_masuk) %> |
+<%= link_to 'Back', obat_masuks_path %>

@@ -1,0 +1,29 @@
+<%= simple_form_for(@penyakit) do |f| %>
+  <% if @penyakit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@penyakit.errors.count, "error") %> prohibited this penyakit from being saved:</h2>
+
+      <ul>
+      <% @penyakit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= f.label :kode %><br>
+      <%= f.text_field :kode %>
+  </div>
+  <div class="field">
+    <%= f.label :nama %><br>
+    <%= f.text_field :nama %>
+  </div>
+  <div class="field">
+
+      <%= f.association :jenis_penyakit, label_method: :nama %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

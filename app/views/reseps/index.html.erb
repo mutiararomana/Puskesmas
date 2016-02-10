@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+<h1>Listing Reseps</h1>
+<div class="pull-right">
+
+    <script type="text/javascript">
+    $('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+    $('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+$('#myTabs a:first').tab('show') // Select first tab
+$('#myTabs a:last').tab('show') // Select last tab
+$('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
+    </script>
+    
+    <div>
+t
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#harian" aria-controls="harian" role="tab" data-toggle="tab">Harian</a></li>
+    <li role="presentation"><a href="#bulanan" aria-controls="bulanan" role="tab" data-toggle="tab">Bulanan</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="harian">
+        <%= form_tag reseps_path, method: :get do %>
+        <%= text_field_tag :search_date, params[:search_date], id:'datepicker' %>
+          <script>
+            $(function() {
+                $( "#datepicker" ).datepicker({
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+          </script>
+        <%= submit_tag 'Search', class: 'btn search-button' %>
+    <% end %>
+      </div>
+    <div role="tabpanel" class="tab-pane" id="bulanan">
+        <%= form_tag reseps_path, method: :get do %>
+        <div class="input-group">
+            <div class="input-group-addon">
+    
+                <select id="bulan" name="bulan">
+                  <option value="January">Januari</option>
+                  <option value="February">Februari</option>
+                  <option value="March">Maret</option>
+                  <option value="April">April</option>
+                  <option value="May">Mei</option>
+                  <option value="June">Juni</option>
+                  <option value="July">Juli</option>
+                  <option value="August">Agustus</option>
+                  <option value="September">September</option>
+                  <option value="October">Oktober</option>
+                  <option value="November">November</option>
+                  <option value="December">Desember</option>
+                </select></div>
+
+            <div class="input-group-addon">
+                <select id="tahun" name="tahun">
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                <!--
+                  <option value="June">Juni</option>
+                  <option value="July">Juli</option>
+                  <option value="August">Agustus</option>
+                  <option value="September">September</option>
+                  <option value="October">Oktober</option>
+                  <option value="November">November</option>
+                  <option value="December">Desember</option>
+                -->
+                </select>
+            </div>
+        </div>
+        <%= submit_tag 'Search', class: 'btn search-button' %>
+        <% end %>
+      </div>
+  </div>
+
+</div>
+    
+
+</div>
+    </div>
+
+<%= link_to "Cetak Resep", cetak_resep_path(bulan: params[:bulan], tahun: params[:tahun]) %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tanggal</th>
+      <th>Obat</th>
+      <th>Jumlah ambil</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @reseps.each do |resep| %>
+      <tr>
+        <td><%= resep.created_at.to_date %></td>
+        <td><%= resep.obat.nama %></td>
+        <td><%= resep.jumlah_ambil %></td>
+        <td><%= link_to 'Show', resep %></td>
+        <td><%= link_to 'Edit', edit_resep_path(resep) %></td>
+        <td><%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resep', new_resep_path %>

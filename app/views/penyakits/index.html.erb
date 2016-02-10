@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Penyakits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Jenis penyakit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @penyakits.each do |penyakit| %>
+      <tr>
+        <td><%= penyakit.nama %></td>
+        <td><%= penyakit.jenis_penyakit.nama %></td>
+        <td><%= link_to 'Show', penyakit %></td>
+        <td><%= link_to 'Edit', edit_penyakit_path(penyakit) %></td>
+        <td><%= link_to 'Destroy', penyakit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Penyakit', new_penyakit_path %>

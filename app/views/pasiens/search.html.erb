@@ -1,0 +1,23 @@
+<% if params[:search] %>
+
+<% @pasiens.each do |pasien| %>
+    <div>
+        <%= pasien.no_rm %>
+        <%= pasien.nama %>
+        <%= pasien.alamat %>
+        <%= pasien.kelurahan.nama%>
+        <%= link_to 'Tambah', new_kunjungan_path(no_rm: pasien) %>
+    
+    </div>
+
+<% end %>
+<% else %>
+<%= form_tag(search_pasien_path, :method => "get", role: "search") do %>
+<div class="form-group">
+<%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Posts" %>
+<%= submit_tag "Search", class: 'btn btn-info' %>
+</div>
+<% end %>
+
+
+<% end %>

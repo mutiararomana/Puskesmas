@@ -1,0 +1,21 @@
+<%= form_for(@jenis_penyakit) do |f| %>
+  <% if @jenis_penyakit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jenis_penyakit.errors.count, "error") %> prohibited this jenis_penyakit from being saved:</h2>
+
+      <ul>
+      <% @jenis_penyakit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nama %><br>
+    <%= f.text_field :nama %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

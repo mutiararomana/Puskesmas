@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201032443) do
+ActiveRecord::Schema.define(version: 20160207070038) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",        limit: 255
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20160201032443) do
   end
 
   create_table "kunjungans", force: :cascade do |t|
-    t.integer  "kartu_rm_id",    limit: 4
     t.string   "nama",           limit: 255
     t.integer  "umur",           limit: 4
     t.string   "jenis_kelamin",  limit: 255
@@ -78,10 +77,10 @@ ActiveRecord::Schema.define(version: 20160201032443) do
     t.string   "no_kartu",       limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "pasien_id",      limit: 4
   end
 
   add_index "kunjungans", ["jenis_kartu_id"], name: "index_kunjungans_on_jenis_kartu_id", using: :btree
-  add_index "kunjungans", ["kartu_rm_id"], name: "index_kunjungans_on_kartu_rm_id", using: :btree
   add_index "kunjungans", ["kategori_id"], name: "index_kunjungans_on_kategori_id", using: :btree
   add_index "kunjungans", ["poli_id"], name: "index_kunjungans_on_poli_id", using: :btree
 
@@ -102,10 +101,11 @@ ActiveRecord::Schema.define(version: 20160201032443) do
     t.integer  "harga",      limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "kode",       limit: 255
+    t.string   "pemakaian",  limit: 255
   end
 
   create_table "pasiens", force: :cascade do |t|
-    t.integer  "kartu_rm_id",    limit: 4
     t.string   "nama",           limit: 255
     t.string   "alamat",         limit: 255
     t.integer  "kelurahan_id",   limit: 4
@@ -116,10 +116,11 @@ ActiveRecord::Schema.define(version: 20160201032443) do
     t.string   "no_kartu",       limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "status",         limit: 255
+    t.string   "no_rm",          limit: 255
   end
 
   add_index "pasiens", ["jenis_kartu_id"], name: "index_pasiens_on_jenis_kartu_id", using: :btree
-  add_index "pasiens", ["kartu_rm_id"], name: "index_pasiens_on_kartu_rm_id", using: :btree
   add_index "pasiens", ["kategori_id"], name: "index_pasiens_on_kategori_id", using: :btree
   add_index "pasiens", ["kelurahan_id"], name: "index_pasiens_on_kelurahan_id", using: :btree
 
@@ -128,6 +129,7 @@ ActiveRecord::Schema.define(version: 20160201032443) do
     t.integer  "jenis_penyakit_id", limit: 4
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "kode",              limit: 255
   end
 
   add_index "penyakits", ["jenis_penyakit_id"], name: "index_penyakits_on_jenis_penyakit_id", using: :btree
@@ -147,16 +149,23 @@ ActiveRecord::Schema.define(version: 20160201032443) do
     t.string   "tindakan",    limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "pasien_id",   limit: 4
   end
 
   add_index "rekam_mediks", ["kartu_rm_id"], name: "index_rekam_mediks_on_kartu_rm_id", using: :btree
   add_index "rekam_mediks", ["penyakit_id"], name: "index_rekam_mediks_on_penyakit_id", using: :btree
 
+  create_table "resep_searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reseps", force: :cascade do |t|
     t.integer  "obat_id",      limit: 4
     t.integer  "jumlah_ambil", limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "pemakaian",    limit: 255
   end
 
   add_index "reseps", ["obat_id"], name: "index_reseps_on_obat_id", using: :btree
@@ -165,12 +174,10 @@ ActiveRecord::Schema.define(version: 20160201032443) do
   add_foreign_key "kartu_rms", "kategoris"
   add_foreign_key "kartu_rms", "kelurahans"
   add_foreign_key "kunjungans", "jenis_kartus"
-  add_foreign_key "kunjungans", "kartu_rms"
   add_foreign_key "kunjungans", "kategoris"
   add_foreign_key "kunjungans", "polis"
   add_foreign_key "obat_masuks", "obats"
   add_foreign_key "pasiens", "jenis_kartus"
-  add_foreign_key "pasiens", "kartu_rms"
   add_foreign_key "pasiens", "kategoris"
   add_foreign_key "pasiens", "kelurahans"
   add_foreign_key "penyakits", "jenis_penyakits"

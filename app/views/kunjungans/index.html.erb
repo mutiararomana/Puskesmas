@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+<h1>Daftar Kunjungan</h1>
+<div class="pull-right">
+    <%= form_tag kunjungans_path, method: :get do %>
+        <%= text_field_tag :search_date, params[:search_date], id:'datepicker' %>
+          <script>
+            $(function() {
+                $( "#datepicker" ).datepicker({
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+          </script>
+        <%= submit_tag 'Search', class: 'btn search-button' %>
+    <% end %>
+</div>
+    </div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tanggal</th>
+      <th>No RM</th>
+      <th>Nama</th>
+      <th>Umur</th>
+      <th>Jenis kelamin</th>
+      <th>Kunjungan</th>
+      <th>Keluhan</th>
+      <th>Poli</th>
+      <th>Kategori</th>
+      <th>Jenis kartu</th>
+      <th>No kartu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kunjungans.each do |kunjungan| %>
+      <tr>
+        <td><%= kunjungan.created_at.to_date %></td>
+        <td><%= kunjungan.pasien.no_rm %></td>
+        <td><%= kunjungan.nama %></td>
+        <td><%= kunjungan.umur %></td>
+        <td><%= kunjungan.jenis_kelamin %></td>
+        <td><%= kunjungan.kunjungan %></td>
+        <td><%= kunjungan.keluhan %></td>
+        <td><%= kunjungan.poli.nama %></td>
+        <td><%= kunjungan.kategori.nama %></td>
+          <% if kunjungan.jenis_kartu != nil %>
+        <td><%= kunjungan.jenis_kartu.nama %></td>
+          <% else %>
+          <td>-</td>
+          <% end %>
+          <% if kunjungan.no_kartu != nil %>
+        <td><%= kunjungan.no_kartu %></td>
+        <% else %>
+          <td>-</td>
+          <% end %>
+        <td><%= link_to 'Show', kunjungan %></td>
+        <td><%= link_to 'Edit', edit_kunjungan_path(kunjungan) %></td>
+        <td><%= link_to 'Destroy', kunjungan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kunjungan', new_kunjungan_path %>

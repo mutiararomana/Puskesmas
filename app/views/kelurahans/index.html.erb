@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Kelurahans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kelurahans.each do |kelurahan| %>
+      <tr>
+        <td><%= kelurahan.nama %></td>
+        <td><%= link_to 'Show', kelurahan %></td>
+        <td><%= link_to 'Edit', edit_kelurahan_path(kelurahan) %></td>
+        <td><%= link_to 'Destroy', kelurahan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kelurahan', new_kelurahan_path %>

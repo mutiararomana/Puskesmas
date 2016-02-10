@@ -1,0 +1,15 @@
+<%= simple_form_for(@resep) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :obat, selected: params[:nama], label_method: :nama, value_method: :id %>
+    <%= f.input :jumlah_ambil %>
+  </div>
+<%= f.label :pemakaian %><br>
+<%= f.radio_button :pemakaian, 'PKM' %> PKM
+<%= f.radio_button :pemakaian, 'PUSTU' %> PUSTU
+<%= f.radio_button :pemakaian, 'POSKESKEL' %> POSKESKEL
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

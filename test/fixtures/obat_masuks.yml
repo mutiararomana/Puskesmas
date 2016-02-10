@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  obat_id: 
+  jumlah_masuk: 1
+  penerimaan: MyString
+
+two:
+  obat_id: 
+  jumlah_masuk: 1
+  penerimaan: MyString

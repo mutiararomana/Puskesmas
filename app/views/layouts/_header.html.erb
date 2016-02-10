@@ -10,7 +10,7 @@
                                 Pasien <b class="caret"></b>
                             </a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to "Entri Data", new_kartu_rm_path %></li>
+                            <li><%= link_to "Entri Data", new_pasien_path %></li>
                             <li class="divider"></li>
                             <li>
                                 <%= link_to "Lihat Data", pasiens_path %>
@@ -21,7 +21,7 @@
                                 Kunjungan <b class="caret"></b>
                             </a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to "Entri Data", new_kunjungan_path %></li>
+                            <li><%= link_to "Entri Data", search_pasien_path %></li>
                             <li class="divider"></li>
                             <li>
                                 <%= link_to "Lihat Data", kunjungans_path %>
@@ -46,10 +46,10 @@
                             <li><%= link_to "Obat Baru", new_obat_path %></li>
                             <li class="divider"></li>
                             <li>
-                            <li><%= link_to "Resep", new_resep_path %></li>
+                            <li><%= link_to "Obat Keluar", search_obat_keluar_path %></li>
                             <li class="divider"></li>
                             <li>
-                            <li><%= link_to "Obat Masuk", new_obat_masuk_path %></li>
+                            <li><%= link_to "Obat Masuk", search_obat_masuk_path %></li>
                             <li class="divider"></li>
                             <li>
                                 <%= link_to "Lihat Data", obats_path %>

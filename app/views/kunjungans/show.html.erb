@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kartu rm:</strong>
+    <%= @kunjungan.pasien.no_rm%>
+</p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @kunjungan.nama %>
+</p>
+
+<p>
+  <strong>Umur:</strong>
+  <%= @kunjungan.umur %>
+</p>
+
+<p>
+  <strong>Jenis kelamin:</strong>
+  <%= @kunjungan.jenis_kelamin %>
+</p>
+
+<p>
+  <strong>Kunjungan:</strong>
+  <%= @kunjungan.kunjungan %>
+</p>
+
+<p>
+  <strong>Keluhan:</strong>
+  <%= @kunjungan.keluhan %>
+</p>
+
+<p>
+  <strong>Poli:</strong>
+  <%= @kunjungan.poli.nama %>
+</p>
+
+<p>
+  <strong>Kategori:</strong>
+  <%= @kunjungan.kategori.nama %>
+</p>
+
+<p>
+  <strong>Jenis kartu:</strong>
+  <%= @kunjungan.jenis_kartu.nama %>
+</p>
+
+<p>
+  <strong>No kartu:</strong>
+  <%= @kunjungan.no_kartu %>
+</p>
+
+<%= link_to 'Edit', edit_kunjungan_path(@kunjungan) %> |
+<%= link_to 'Back', kunjungans_path %>

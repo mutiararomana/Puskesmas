@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kode:</strong>
+    <%= @obat.kode %>
+</p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @obat.nama %>
+</p>
+
+<p>
+  <strong>Stok awal:</strong>
+  <%= @obat.stok_awal %>
+</p>
+
+<p>
+  <strong>Stok:</strong>
+  <%= @obat.stok %>
+</p>
+
+<p>
+  <strong>Harga:</strong>
+  <%= @obat.harga %>
+</p>
+
+<%= link_to 'Edit', edit_obat_path(@obat) %> |
+<%= link_to 'Back', obats_path %>

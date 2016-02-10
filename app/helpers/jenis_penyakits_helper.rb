@@ -1,0 +1,2 @@
+module JenisPenyakitsHelper
+end

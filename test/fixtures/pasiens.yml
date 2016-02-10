@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kartu_rm_id: 
+  nama: MyString
+  alamat: MyString
+  kelurahan_id: 
+  umur: 1
+  jenis_kelamin: MyString
+  kategori_id: 
+  jenis_kartu_id: 
+  no_kartu: MyString
+
+two:
+  kartu_rm_id: 
+  nama: MyString
+  alamat: MyString
+  kelurahan_id: 
+  umur: 1
+  jenis_kelamin: MyString
+  kategori_id: 
+  jenis_kartu_id: 
+  no_kartu: MyString

@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pasiens</h1>
+
+<%= form_tag(pasiens_path, :method => "get", class: "navbar-form navbar-left", role: "search") do %>
+<div class="form-group">
+<%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Posts" %>
+<%= submit_tag "Search", class: 'btn btn-info' %>
+ </div>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kartu rm</th>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Kelurahan</th>
+      <th>Umur</th>
+      <th>Jenis kelamin</th>
+      <th>Kategori</th>
+      <th>Jenis kartu</th>
+      <th>No kartu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pasiens.each do |pasien| %>
+      <tr>
+        <td><%= pasien.no_rm %></td>
+        <td><%= pasien.nama %></td>
+        <td><%= pasien.alamat %></td>
+        <td><%= pasien.kelurahan.nama %></td>
+        <td><%= pasien.umur %></td>
+        <td><%= pasien.jenis_kelamin %></td>
+        <td><%= pasien.kategori.nama %></td>
+          <% if pasien.jenis_kartu != nil %>
+        <td><%= pasien.jenis_kartu.nama %></td>
+          <% else %>
+          <td>-</td>
+          <% end %>
+          <% if pasien.no_kartu != nil %>
+        <td><%= pasien.no_kartu %></td>
+        <% else %>
+          <td>-</td>
+          <% end %>
+        <td><%= link_to 'Show', pasien %></td>
+        <td><%= link_to 'Edit', edit_pasien_path(pasien) %></td>
+        <td><%= link_to 'Destroy', pasien, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pasien', new_pasien_path %>

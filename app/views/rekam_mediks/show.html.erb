@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kartu rm:</strong>
+    <%= @rekam_medik.pasien.no_rm %>
+</p>
+
+<p>
+  <strong>Nama:</strong>
+  <%= @rekam_medik.nama %>
+</p>
+
+<p>
+  <strong>Keluhan:</strong>
+  <%= @rekam_medik.keluhan %>
+</p>
+
+<p>
+  <strong>Penyakit:</strong>
+  <%= @rekam_medik.penyakit %>
+</p>
+
+<p>
+  <strong>Terapi:</strong>
+  <%= @rekam_medik.terapi %>
+</p>
+
+<p>
+  <strong>Tindakan:</strong>
+  <%= @rekam_medik.tindakan %>
+</p>
+
+<%= link_to 'Edit', edit_rekam_medik_path(@rekam_medik) %> |
+<%= link_to 'Back', rekam_mediks_path %>

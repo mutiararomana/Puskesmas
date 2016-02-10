@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jenis Kartu</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jenis_kartus.each do |jenis_kartu| %>
+      <tr>
+        <td><%= jenis_kartu.nama %></td>
+        <td><%= link_to 'Show', jenis_kartu %></td>
+        <td><%= link_to 'Edit', edit_jenis_kartu_path(jenis_kartu) %></td>
+        <td><%= link_to 'Destroy', jenis_kartu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jenis kartu', new_jenis_kartu_path %>

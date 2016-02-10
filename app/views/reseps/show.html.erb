@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Obat:</strong>
+  <%= @resep.obat.nama %>
+</p>
+
+<p>
+  <strong>Jumlah ambil:</strong>
+  <%= @resep.jumlah_ambil %>
+</p>
+  <strong>Pemakaian:</strong>
+<%= @resep.pemakaian %>
+</p>
+
+<%= link_to 'Edit', edit_resep_path(@resep) %> |
+<%= link_to 'Back', reseps_path %>

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :pasiens
   resources :kartu_rms
   resources :penyakits
-  resources :kartu_rms
   resources :obats
   resources :jenis_penyakits
   resources :jenis_kartus
@@ -22,6 +21,11 @@ Rails.application.routes.draw do
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
+    get 'search_pasien' => 'pasiens#search'
+    get 'search_obat_masuk' => 'obats#search_obat_masuk'
+    get 'search_obat_keluar' => 'obats#search_obat_keluar'
+    get 'cetak_rekam_medik' => 'pasiens#rekam_medik'
+    get 'cetak_resep' => 'reseps#cetak_resep'
   resources :admins
 
 
