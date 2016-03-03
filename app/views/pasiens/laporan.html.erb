@@ -1,0 +1,189 @@
+<div class="pull-right"
+<%= form_tag reseps_path, method: :get do %>
+    <div class="input-group">
+        <div class="input-group-addon">
+    
+            <select id="bulan" name="bulan">
+              <option value="January">Januari</option>
+              <option value="February">Februari</option>
+              <option value="March">Maret</option>
+              <option value="April">April</option>
+              <option value="May">Mei</option>
+              <option value="June">Juni</option>
+              <option value="July">Juli</option>
+              <option value="August">Agustus</option>
+              <option value="September">September</option>
+              <option value="October">Oktober</option>
+              <option value="November">November</option>
+              <option value="December">Desember</option>
+            </select></div>
+
+        <div class="input-group-addon">
+            <select id="tahun" name="tahun">
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+                <!--
+                  <option value="June">Juni</option>
+                  <option value="July">Juli</option>
+                  <option value="August">Agustus</option>
+                  <option value="September">September</option>
+                  <option value="October">Oktober</option>
+                  <option value="November">November</option>
+                  <option value="December">Desember</option>
+                -->
+            </select>
+        </div>
+    </div>
+    <%= submit_tag 'Search', class: 'btn search-button' %>
+<% end %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th rowspan="4">No</th>
+      <th rowspan="4">Nama Penyakit</th>
+      <th rowspan="4">Jenis Penyakit</th>
+      <th colspan="36">Jumlah Penderita</th>
+      <th colspan="4">Total</th>
+
+      </tr>
+      <tr>
+      <td colspan="4"><1 Th</td>
+      <td colspan="4">1-4 Th</td>
+      <td colspan="4">5-9 Th</td>
+      <td colspan="4">10-14 Th</td>
+      <td colspan="4">15-19 Th</td>
+      <td colspan="4">20-44 Th</td>
+      <td colspan="4">45-43 Th</td>
+      <td colspan="4">55-59 Th</td>
+      <td colspan="4">>60 Th</td>
+    </tr>
+      <tr>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      <td colspan="2">B</td>
+      <td colspan="2">L</td>
+      </tr>
+      <tr>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+      <td>L</td>
+      <td>P</td>
+
+      
+      </tr>
+  </thead>
+
+  <tbody>
+
+
+      <% @pasiens.each do |pasien| %>
+      <tr>
+          
+          
+          
+          <td><%= pasien.kode_penyakit %></td>
+          <td><%= pasien.nama_penyakit %></td>
+          <td><%= pasien.jenis_penyakit %></td>
+          <td><%= pasien.j1 %></td>
+          <td><%= pasien.j2 %></td>
+          <td><%= pasien.j3 %></td>
+          <td><%= pasien.j4 %></td>
+          <td><%= pasien.j5 %></td>
+          <td><%= pasien.j6 %></td>
+          <td><%= pasien.j7 %></td>
+          <td><%= pasien.j8 %></td>
+          <td><%= pasien.j9 %></td>
+          <td><%= pasien.j10 %></td>
+          <td><%= pasien.j11 %></td>
+          <td><%= pasien.j12 %></td>
+          <td><%= pasien.j13 %></td>
+          <td><%= pasien.j14 %></td>
+          <td><%= pasien.j15 %></td>
+          <td><%= pasien.j16 %></td>
+          <td><%= pasien.j17 %></td>
+          <td><%= pasien.j18 %></td>
+          <td><%= pasien.j19 %></td>
+          <td><%= pasien.j20 %></td>
+          <td><%= pasien.j21 %></td>
+          <td><%= pasien.j22 %></td>
+          <td><%= pasien.j23 %></td>
+          <td><%= pasien.j24 %></td>
+          <td><%= pasien.j25 %></td>
+          <td><%= pasien.j26 %></td>
+          <td><%= pasien.j27 %></td>
+          <td><%= pasien.j28 %></td>
+          <td><%= pasien.j29 %></td>
+          <td><%= pasien.j30 %></td>
+          <td><%= pasien.j31 %></td>
+          <td><%= pasien.j32 %></td>
+          <td><%= pasien.j33 %></td>
+          <td><%= pasien.j34 %></td>
+          <td><%= pasien.j35 %></td>
+          <td><%= pasien.j36 %></td>
+
+                    
+          <% end %>
+
+        <td><%#<%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    
+  </tbody>
+</table>

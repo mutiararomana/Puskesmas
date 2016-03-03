@@ -17,7 +17,7 @@
 </div>
     </div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Tanggal</th>
@@ -41,19 +41,19 @@
         <td><%= kunjungan.created_at.to_date %></td>
         <td><%= kunjungan.pasien.no_rm %></td>
         <td><%= kunjungan.nama %></td>
-        <td><%= kunjungan.umur %></td>
-        <td><%= kunjungan.jenis_kelamin %></td>
+          <td><%= kunjungan.pasien.umur %></td>
+          <td><%= kunjungan.pasien.jenis_kelamin %></td>
         <td><%= kunjungan.kunjungan %></td>
         <td><%= kunjungan.keluhan %></td>
         <td><%= kunjungan.poli.nama %></td>
-        <td><%= kunjungan.kategori.nama %></td>
-          <% if kunjungan.jenis_kartu != nil %>
-        <td><%= kunjungan.jenis_kartu.nama %></td>
+          <td><%= kunjungan.pasien.kategori.nama %></td>
+          <% if kunjungan.pasien.jenis_kartu != nil %>
+          <td><%= kunjungan.pasien.jenis_kartu.nama %></td>
           <% else %>
           <td>-</td>
           <% end %>
-          <% if kunjungan.no_kartu != nil %>
-        <td><%= kunjungan.no_kartu %></td>
+          <% if kunjungan.pasien.no_kartu != nil %>
+          <td><%= kunjungan.pasien.no_kartu %></td>
         <% else %>
           <td>-</td>
           <% end %>

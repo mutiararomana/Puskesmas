@@ -4,6 +4,7 @@ class Obat < ActiveRecord::Base
     validates :stok_awal, presence: true
     
     before_create :set_stok
+#    after_commit :laporan
     
     def set_stok
         self.stok = stok_awal
@@ -12,4 +13,6 @@ class Obat < ActiveRecord::Base
     def self.search(search)
         where("nama LIKE ?", "%#{search}%") 
     end
+    
+
 end

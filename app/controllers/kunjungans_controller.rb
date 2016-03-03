@@ -1,5 +1,7 @@
 class KunjungansController < ApplicationController
   before_action :set_kunjungan, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+
 
   # GET /kunjungans
   # GET /kunjungans.json
@@ -33,8 +35,8 @@ class KunjungansController < ApplicationController
 
     respond_to do |format|
       if @kunjungan.save
-        format.html { redirect_to @kunjungan, notice: 'Kunjungan was successfully created.' }
-        format.json { render :show, status: :created, location: @kunjungan }
+        format.html { redirect_to kunjungans_path, notice: 'Kunjungan was successfully created.' }
+#        format.json { render :show, status: :created, location: @kunjungan }
       else
         format.html { render :new }
         format.json { render json: @kunjungan.errors, status: :unprocessable_entity }
@@ -65,6 +67,14 @@ class KunjungansController < ApplicationController
       format.json { head :no_content }
     end
   end
+    
+#    def set_pasien
+#        @pasien = Pasien.find(params[:pasien_id])
+#        @kunjungan = Kunjungan.find(params[:id])
+#        @kunjungan.umur = @pasien.umur
+#        @kunjungan.save
+#        
+#    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

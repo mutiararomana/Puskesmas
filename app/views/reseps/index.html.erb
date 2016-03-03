@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-<h1>Listing Reseps</h1>
+<h1>Daftar Obat Keluar</h1>
 <div class="pull-right">
 
     <script type="text/javascript">
@@ -15,7 +15,7 @@ $('#myTabs li:eq(2) a').tab('show') // Select third tab (0-indexed)
     </script>
     
     <div>
-t
+
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#harian" aria-controls="harian" role="tab" data-toggle="tab">Harian</a></li>
@@ -87,13 +87,14 @@ t
 </div>
     </div>
 
-<%= link_to "Cetak Resep", cetak_resep_path(bulan: params[:bulan], tahun: params[:tahun]) %>
+<%#<%= link_to "Cetak Resep", cetak_resep_path(bulan: params[:bulan], tahun: params[:tahun]) %>
 <table class="table">
   <thead>
     <tr>
       <th>Tanggal</th>
       <th>Obat</th>
       <th>Jumlah ambil</th>
+      <th>Pemakaian</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -105,6 +106,7 @@ t
         <td><%= resep.created_at.to_date %></td>
         <td><%= resep.obat.nama %></td>
         <td><%= resep.jumlah_ambil %></td>
+          <td><%= resep.pemakaian %></td>
         <td><%= link_to 'Show', resep %></td>
         <td><%= link_to 'Edit', edit_resep_path(resep) %></td>
         <td><%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>

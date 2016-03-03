@@ -1,5 +1,7 @@
 class ObatMasuksController < ApplicationController
   before_action :set_obat_masuk, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :laporan]
+
 
   # GET /obat_masuks
   # GET /obat_masuks.json
@@ -28,8 +30,8 @@ class ObatMasuksController < ApplicationController
 
     respond_to do |format|
       if @obat_masuk.save
-        format.html { redirect_to @obat_masuk, notice: 'Obat masuk was successfully created.' }
-        format.json { render :show, status: :created, location: @obat_masuk }
+        format.html { redirect_to obat_masuks_path, notice: 'Obat masuk was successfully created.' }
+#        format.json { render :show, status: :created, location: @obat_masuk }
       else
         format.html { render :new }
         format.json { render json: @obat_masuk.errors, status: :unprocessable_entity }

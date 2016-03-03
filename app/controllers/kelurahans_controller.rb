@@ -1,5 +1,7 @@
 class KelurahansController < ApplicationController
   before_action :set_kelurahan, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+
 
   # GET /kelurahans
   # GET /kelurahans.json

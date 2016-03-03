@@ -1,7 +1,5 @@
 <% provide(:title, "Log in") %>
-<% if logged_in? %>
-<%= render 'static_pages/home' %>
-<% else %>
+
 <h1>Selamat datang di website Puskesmas Kampung Sawah</h1>
 <h2>Log In</h2>
 <div class="row">
@@ -20,7 +18,6 @@
         <p>New user? <%= link_to "Sign up now!", signup_path %></p>
     </div>
 </div>
- <% end %>
     
 <%#<%= form_tag sessions_path do %>
 <%#<div class="field">%>

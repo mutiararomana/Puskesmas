@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207070038) do
+ActiveRecord::Schema.define(version: 20160216034347) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",        limit: 255
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20160207070038) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "pasien_id",      limit: 4
+    t.integer  "penyakit_id",    limit: 4
   end
 
   add_index "kunjungans", ["jenis_kartu_id"], name: "index_kunjungans_on_jenis_kartu_id", using: :btree
@@ -118,6 +119,7 @@ ActiveRecord::Schema.define(version: 20160207070038) do
     t.datetime "updated_at",                 null: false
     t.string   "status",         limit: 255
     t.string   "no_rm",          limit: 255
+    t.date     "tanggal_lahir"
   end
 
   add_index "pasiens", ["jenis_kartu_id"], name: "index_pasiens_on_jenis_kartu_id", using: :btree

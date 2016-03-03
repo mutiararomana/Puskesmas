@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Kartu rm</th>
       <th>Nama</th>
       <th>Keluhan</th>
       <th>Penyakit</th>
@@ -18,7 +17,7 @@
   <tbody>
     <% @rekam_mediks.each do |rekam_medik| %>
       <tr>
-        <td><%= rekam_medik.pasien.no_rm %></td>
+
         <td><%= rekam_medik.nama %></td>
         <td><%= rekam_medik.keluhan %></td>
         <td><%= rekam_medik.penyakit.nama %></td>

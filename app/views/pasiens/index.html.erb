@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pasiens</h1>
-
+<h1>Daftar Pasien</h1>
+<div class="pull-right">
 <%= form_tag(pasiens_path, :method => "get", class: "navbar-form navbar-left", role: "search") do %>
 <div class="form-group">
-<%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Posts" %>
+    <%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Pasien" %>
 <%= submit_tag "Search", class: 'btn btn-info' %>
  </div>
 <% end %>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Kartu rm</th>

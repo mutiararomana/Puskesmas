@@ -1,6 +1,8 @@
 class RekamMediksController < ApplicationController
   before_action :set_rekam_medik, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
 
+    
   # GET /rekam_mediks
   # GET /rekam_mediks.json
   def index
@@ -28,8 +30,8 @@ class RekamMediksController < ApplicationController
 
     respond_to do |format|
       if @rekam_medik.save
-        format.html { redirect_to @rekam_medik, notice: 'Rekam medik was successfully created.' }
-        format.json { render :show, status: :created, location: @rekam_medik }
+          format.html { redirect_to pasien_path(@rekam_medik.pasien), notice: 'Rekam medik was successfully created.' }
+#          format.json { render :show, status: :created, location: @pasien}
       else
         format.html { render :new }
         format.json { render json: @rekam_medik.errors, status: :unprocessable_entity }
@@ -58,6 +60,7 @@ class RekamMediksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to rekam_mediks_url, notice: 'Rekam medik was successfully destroyed.' }
       format.json { head :no_content }
+#        redirect_to :back
     end
   end
 

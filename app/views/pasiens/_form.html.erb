@@ -12,7 +12,8 @@
     <%= f.radio_button :status, 'anggota' %> Anggota keluarga
     <%= f.input :alamat %>
     <%= f.association :kelurahan, label_method: :nama %>
-    <%= f.input :umur %>
+    <%= f.label :tanggal_lahir %><br>
+    <%= f.date_select :tanggal_lahir, :start_year => Time.now.year - 100, :end_year => Time.now.year %>
     <%= f.label :jenis_kelamin %><br>
     <%= f.radio_button :jenis_kelamin, 'L' %> L
     <%= f.radio_button :jenis_kelamin, 'P' %> P
@@ -23,6 +24,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+      <%= f.button :submit %>
   </div>
 <% end %>

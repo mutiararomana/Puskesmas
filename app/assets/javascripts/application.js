@@ -11,10 +11,15 @@
 // about supported directives.
 //
 
+
+
+//= require turbolinks
+//= require chartkick
+//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/datepicker
-//= require turbolinks
-//= require bootstrap-sprockets
 //= require_tree .
+
+
 

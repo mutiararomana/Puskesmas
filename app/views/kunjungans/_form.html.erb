@@ -4,21 +4,21 @@
   <div class="form-inputs">
     <%= f.association :pasien, selected: params[:no_rm], label_method: :no_rm, value_method: :id %>
     <%= f.input :nama %>
-    <%= f.input :umur %>
-    <%= f.label :jenis_kelamin %><br>
-    <%= f.radio_button :jenis_kelamin, 'L' %> L
-    <%= f.radio_button :jenis_kelamin, 'P' %> P<br>
+    <%#<%= f.input :umur %>
+    <%#<%= f.label :jenis_kelamin %><!--<br>-->
+    <%#<%= f.radio_button :jenis_kelamin, 'L' %> <!--L-->
+    <%#<%= f.radio_button :jenis_kelamin, 'P' %> <!--P<br>-->
     <%= f.label :kunjungan %><br>
     <%= f.radio_button :kunjungan, 'B' %> B
     <%= f.radio_button :kunjungan, 'L' %> L
     <%= f.input :keluhan %>
     <%= f.association :poli, label_method: :nama %>
-    <%= f.association :kategori, label_method: :nama %>
-    <%= f.association :jenis_kartu, label_method: :nama %>
-    <%= f.input :no_kartu %>
+    <%#<%= f.association :kategori, label_method: :nama %>
+    <%#<%= f.association :jenis_kartu, label_method: :nama %>
+    <%#<%= f.input :no_kartu %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+      <%= f.button :submit, pasien_id: @kunjungan.pasien_id %>
   </div>
 <% end %>

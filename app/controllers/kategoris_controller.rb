@@ -1,5 +1,6 @@
 class KategorisController < ApplicationController
   before_action :set_kategori, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
 
   # GET /kategoris
   # GET /kategoris.json

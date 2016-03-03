@@ -1,63 +1,61 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-<div class="col-md-4">  
-    <strong>Anggota Keluarga:</strong>
-
+<div class="col-md-4">
+    <h4>Keluarga Pasien</h4>
+    <div class="row">
+        <div class="col-md-7">
+            <p><strong>Nama</strong></p>
+            <p><% @keluarga.each do |keluarga| %>
+                <%= link_to keluarga.nama, pasien_path(keluarga.id) %>                 
+            </p>
+            <% end %>
+        </div>
+        <div class="col-md-5">
+            <p><strong>Status</strong></p>
+            <p><% @keluarga.each do |keluarga| %>
+                <%= keluarga.status %> keluarga                
+            </p>
+            <% end %>
+        </div>
+    </div><br>
+    
+    <h4>Data Pasien</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <p><strong>No RM</strong></p>
+            <p><strong>Nama</strong></p>
+            <p><strong>Status Keluarga</strong></p>
+            <p><strong>Alamat</strong></p>
+            <p><strong>Kelurahan</strong></p>
+            <p><strong>Umur</strong></p>
+            <p><strong>Jenis Kelamin</strong></p>
+            <p><strong>Kategori</strong></p>
+            <p><strong>Jenis Kartu</strong></p>
+            <p><strong>No Kartu</strong></p>
+        </div>
+        <div class="col-md-8">
+            <p> : <%= @pasien.no_rm %></p>
+            <p> : <%= @pasien.nama %></p>
+            <p> : <%= @pasien.status %> keluarga</p>
+            <p> : <%= @pasien.alamat %></p>
+            <p> : <%= @pasien.kelurahan.nama %></p>
+            <p> : <%= @pasien.umur %></p>
+            <p> : <%= @pasien.jenis_kelamin %></p>
+            <p> : <%= @pasien.kategori.nama %></p>
+            <p> <% if @pasien.jenis_kartu != nil %>
+                    : <%= @pasien.jenis_kartu.nama %>
+                <% else %>
+                    : -
+                <% end %></p>
+            <p> : <%= @pasien.no_kartu %></p>
+        </div>
     </div>
+    
+</div> 
+
+
 <div class="col-md-8">
-<p>
-  <strong>No rm:</strong>
-  <%= @pasien.no_rm %>
-</p>
-
-<p>
-  <strong>Nama:</strong>
-  <%= @pasien.nama %>
-</p>
-
-  <strong>Status Keluarga:</strong>
-  <%= @pasien.status %> keluarga
-</p>
-
-<p>
-  <strong>Alamat:</strong>
-  <%= @pasien.alamat %>
-</p>
-
-<p>
-  <strong>Kelurahan:</strong>
-  <%= @pasien.kelurahan.nama %>
-</p>
-
-<p>
-  <strong>Umur:</strong>
-  <%= @pasien.umur %>
-</p>
-
-<p>
-  <strong>Jenis kelamin:</strong>
-  <%= @pasien.jenis_kelamin %>
-</p>
-
-<p>
-  <strong>Kategori:</strong>
-  <%= @pasien.kategori.nama %>
-</p>
-
-<p>
-  <strong>Jenis kartu:</strong>
-    <% if @pasien.jenis_kartu != nil %>
-    <%= @pasien.jenis_kartu.nama %>
-    <% else %>
-    -
-    <% end %>
-</p>
-
-<p>
-  <strong>No kartu:</strong>
-  <%= @pasien.no_kartu %>
-</p>
-    </div> 
+<h4>Rekam Medik Pasien</h4>
     
     <div>
         <%= link_to 'Tambah rekam medik', new_rekam_medik_path(no_rm: @pasien) %>
@@ -87,6 +85,8 @@
           <td><%= rm.penyakit.nama %></td>
           <td><%= rm.terapi %></td>
           <td><%= rm.tindakan %></td>
+
+
           <% end %>
       </tr>
     </tbody>
@@ -94,7 +94,11 @@
 <% end %>
 <!--<p id="pdf_link"><%#<%= link_to "Download Invoice (PDF)", pasien_path(@pasien, :format => "pdf") %></p>-->
 
-<%= link_to "Cetak Rekam Medik", cetak_rekam_medik_path(id: @pasien) %>
-
+    <%= link_to "Cetak Rekam Medik", cetak_rekam_medik_path(id: @pasien, :format => "pdf") %>
+    </div>
+</div>
 <%#<%= link_to 'Edit', edit_pasien_path(@pasien) %> 
 <%#<%= link_to 'Back', pasiens_path %>
+
+    
+

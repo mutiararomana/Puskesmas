@@ -1,5 +1,6 @@
 class ResepsController < ApplicationController
   before_action :set_resep, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
 
   # GET /reseps
   # GET /reseps.json
@@ -49,8 +50,8 @@ class ResepsController < ApplicationController
 
     respond_to do |format|
       if @resep.save
-        format.html { redirect_to @resep, notice: 'Resep was successfully created.' }
-        format.json { render :show, status: :created, location: @resep }
+          format.html { redirect_to reseps_path, notice: 'Resep was successfully created.' }
+#        format.json { render :show, status: :created, location: @resep }
       else
         format.html { render :new }
         format.json { render json: @resep.errors, status: :unprocessable_entity }

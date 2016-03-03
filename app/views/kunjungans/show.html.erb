@@ -12,12 +12,12 @@
 
 <p>
   <strong>Umur:</strong>
-  <%= @kunjungan.umur %>
+    <%= @kunjungan.pasien.umur %>
 </p>
 
 <p>
   <strong>Jenis kelamin:</strong>
-  <%= @kunjungan.jenis_kelamin %>
+    <%= @kunjungan.pasien.jenis_kelamin %>
 </p>
 
 <p>
@@ -37,17 +37,21 @@
 
 <p>
   <strong>Kategori:</strong>
-  <%= @kunjungan.kategori.nama %>
+    <%= @kunjungan.pasien.kategori.nama %>
 </p>
 
 <p>
   <strong>Jenis kartu:</strong>
-  <%= @kunjungan.jenis_kartu.nama %>
+    <% if @kunjungan.pasien.jenis_kartu != nil %>
+    <%= @kunjungan.pasien.jenis_kartu.nama %>
+    <% else %>
+    -
+    <% end %>
 </p>
 
 <p>
   <strong>No kartu:</strong>
-  <%= @kunjungan.no_kartu %>
+    <%= @kunjungan.pasien.no_kartu %>
 </p>
 
 <%= link_to 'Edit', edit_kunjungan_path(@kunjungan) %> |

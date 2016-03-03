@@ -1,6 +1,6 @@
 class Resep < ActiveRecord::Base
   belongs_to :obat
-    after_save :update_obat_stok, :total_resep
+    after_save :update_obat_stok
     
     def update_obat_stok
         if (b = Obat.where(:id => self.obat_id).first)
