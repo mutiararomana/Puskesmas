@@ -1,6 +1,6 @@
 class PenyakitsController < ApplicationController
   before_action :set_penyakit, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :index, :show, :edit]
 
 
   # GET /penyakits

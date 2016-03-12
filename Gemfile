@@ -18,7 +18,7 @@ gem 'wicked_pdf'
 
 gem 'by_star'
 gem 'chronic'
-gem 'highcharts-rails'
+#gem 'highcharts-rails'
 gem 'chartkick'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0'

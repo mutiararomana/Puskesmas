@@ -1,22 +1,61 @@
 <% if params[:search] %>
 
-<% @pasiens.each do |pasien| %>
-    <div>
-        <%= pasien.no_rm %>
-        <%= pasien.nama %>
-        <%= pasien.alamat %>
-        <%= pasien.kelurahan.nama%>
-        <%= link_to 'Tambah', new_kunjungan_path(no_rm: pasien) %>
-    
-    </div>
+    <table class="table table-bordered">
+      <thead vertical-align="middle">
+        <tr>
+          <th>No RM</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Kelurahan</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<% end %>
+      <tbody>
+        <% @pasiens.each do |pasien| %>
+            <tr>
+            <td><%= pasien.no_rm %></td>
+            <td><%= pasien.nama %></td>
+            <td><%= pasien.alamat %></td>
+            <td><%= pasien.kelurahan.nama%></td>
+            <td><%= link_to 'Tambah', new_kunjungan_path(no_rm: pasien) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+
+
 <% else %>
-<%= form_tag(search_pasien_path, :method => "get", role: "search") do %>
-<div class="form-group">
-<%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Posts" %>
-<%= submit_tag "Search", class: 'btn btn-info' %>
-</div>
+    <%= form_tag(search_pasien_path, :method => "get", role: "search") do %>
+    <div class="pull-right">
+        <div class="form-group">
+            <%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Pasien" %>
+            <%= submit_tag "Search", class: 'btn btn-info' %>
+        </div>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>No RM</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Kelurahan</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <% @pasiens.each do |pasien| %>
+            <tr>
+            <td><%= pasien.no_rm %></td>
+            <td><%= pasien.nama %></td>
+            <td><%= pasien.alamat %></td>
+            <td><%= pasien.kelurahan.nama%></td>
+            <td><%= link_to 'Tambah', new_kunjungan_path(no_rm: pasien) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
 <% end %>
 
 

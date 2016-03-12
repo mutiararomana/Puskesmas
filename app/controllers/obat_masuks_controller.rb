@@ -1,6 +1,6 @@
 class ObatMasuksController < ApplicationController
   before_action :set_obat_masuk, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :laporan]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :laporan, :index, :show, :edit]
 
 
   # GET /obat_masuks

@@ -85,6 +85,8 @@
           <td><%= rm.penyakit.nama %></td>
           <td><%= rm.terapi %></td>
           <td><%= rm.tindakan %></td>
+          <td><%= link_to 'Edit', edit_rekam_medik_path(rm.id) %></td>
+          <td><%= link_to 'Destroy', rm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 
           <% end %>

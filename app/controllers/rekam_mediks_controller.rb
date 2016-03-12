@@ -1,6 +1,6 @@
 class RekamMediksController < ApplicationController
   before_action :set_rekam_medik, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+    before_action :logged_in_user, only: [:new, :create, :update, :destroy, :index, :show, :edit]
 
     
   # GET /rekam_mediks
@@ -58,7 +58,7 @@ class RekamMediksController < ApplicationController
   def destroy
     @rekam_medik.destroy
     respond_to do |format|
-      format.html { redirect_to rekam_mediks_url, notice: 'Rekam medik was successfully destroyed.' }
+        format.html { redirect_to pasiens_url, notice: 'Rekam medik was successfully destroyed.' }
       format.json { head :no_content }
 #        redirect_to :back
     end

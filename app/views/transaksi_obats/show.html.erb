@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Obat:</strong>
+  <%= @transaksi_obat.obat_id %>
+</p>
+
+<p>
+  <strong>Jumlah masuk:</strong>
+  <%= @transaksi_obat.jumlah_masuk %>
+</p>
+
+<p>
+  <strong>Jumlah ambil:</strong>
+  <%= @transaksi_obat.jumlah_ambil %>
+</p>
+
+<p>
+  <strong>Penerimaan:</strong>
+  <%= @transaksi_obat.penerimaan %>
+</p>
+
+<p>
+  <strong>Pemakaian:</strong>
+  <%= @transaksi_obat.pemakaian %>
+</p>
+
+<%= link_to 'Edit', edit_transaksi_obat_path(@transaksi_obat) %> |
+<%= link_to 'Back', transaksi_obats_path %>

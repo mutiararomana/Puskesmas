@@ -1,0 +1,61 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th rowspan="2">Nama Obat</th>
+      <th rowspan="2">Stok Awal</th>
+      <th colspan="5">Penerimaan</th>
+      <th rowspan="2">Persediaan</th>
+      <th colspan="3">Pemakaian</th>
+      <th rowspan="2">Jumlah Pemakaian</th>
+      <th rowspan="2">Stok Akhir</th>
+      <th rowspan="2">Harga</th>
+      <th rowspan="2">Ket</th>
+      </tr>
+      <tr>
+      <th>PKD</th>
+      <th>ASK</th>
+      <th>DAK</th>
+      <th>PROGR</th>
+      <th>POSKEL</th>
+      <th>PKM</th>
+      <th>PUSTU</th>
+      <th>POSKESKEL</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <%#<% @obats.each do |obat| %>
+      <% @obats.each do |resep| %>
+      <tr>
+          
+          
+          
+          <td><%= resep.nama %></td>
+          <td><%= resep.stok_awal %></td>
+          <td><%= resep.pkd %></td>
+          <td><%= resep.ask %></td>
+          <td><%= resep.dak %></td>
+          <td><%= resep.progr %></td>
+          <td><%= resep.poskel %></td>
+          <td><%= resep.jumlah_masuk%></td>
+          <td><%= resep.pkm %></td>
+          <td><%= resep.pustu %></td>
+          <td><%= resep.poskeskel %></td>
+          <td><%= resep.jumlah_ambil %></td>
+          <td><%= resep.stok %></td>
+          <td><%= resep.harga %></td>
+
+                    
+          <% end %>
+          <%#<%end%>
+
+        <td><%#<%= link_to 'Show', resep %></td>
+        <td><%#<%= link_to 'Edit', edit_resep_path(resep) %></td>
+        <td><%#<%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+I"o(function() {
+  jQuery(function() {
+    return $('#resep_created_at').datepicker();
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Transaksi Obats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Obat</th>
+      <th>Jumlah masuk</th>
+      <th>Jumlah ambil</th>
+      <th>Penerimaan</th>
+      <th>Pemakaian</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transaksi_obats.each do |transaksi_obat| %>
+      <tr>
+        <td><%= transaksi_obat.obat_id %></td>
+        <td><%= transaksi_obat.jumlah_masuk %></td>
+        <td><%= transaksi_obat.jumlah_ambil %></td>
+        <td><%= transaksi_obat.penerimaan %></td>
+        <td><%= transaksi_obat.pemakaian %></td>
+        <td><%= link_to 'Show', transaksi_obat %></td>
+        <td><%= link_to 'Edit', edit_transaksi_obat_path(transaksi_obat) %></td>
+        <td><%= link_to 'Destroy', transaksi_obat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaksi obat', new_transaksi_obat_path %>

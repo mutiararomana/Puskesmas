@@ -1,6 +1,6 @@
 class ResepsController < ApplicationController
   before_action :set_resep, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :index, :show, :edit]
 
   # GET /reseps
   # GET /reseps.json
@@ -9,10 +9,10 @@ class ResepsController < ApplicationController
           @reseps = Resep.by_day(params[:search_date])
 #          time = Date.parse(params[:search_date])
 #          @reseps = Resep.where(:created_at => (time.beginning_of_day..time.end_of_day))
-        @reseps = @reseps.joins(:obat).select('*, sum(jumlah_ambil) as jumlah_ambil').group('obat_id')
+        @reseps = @reseps.select('*, sum(jumlah_ambil) as jumlah_ambil').group('obat_id')
       elsif params[:bulan]
           @reseps = Resep.by_month(params[:bulan], :year => params[:tahun])
-          @reseps = @reseps.joins(:obat).select('*, sum(jumlah_ambil) as jumlah_ambil').group('obat_id')
+          @reseps = @reseps.select('*, sum(jumlah_ambil) as jumlah_ambil').group('obat_id')
 
       else
           @reseps = Resep.all
@@ -25,7 +25,7 @@ class ResepsController < ApplicationController
 #        time = Month.parse(params[:search_date])
 #          @reseps = Resep.where(:created_at => (time.beginning_of_month..time.end_of_month))
 #        @total_reseps = @reseps.group(:obat_id).sum(:jumlah_ambil)
-        @total_reseps = @reseps.joins(:obat).select('*, sum(jumlah_ambil) as total').group('obat_id')
+        @total_reseps = @reseps.select('*, sum(jumlah_ambil) as total').group('obat_id')
         
     end
 

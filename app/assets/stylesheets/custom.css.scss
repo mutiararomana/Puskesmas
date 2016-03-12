@@ -135,12 +135,25 @@ input {
   }
 }
 
+tr {
+  text-align: center;
+  vertical-align: middle;
+}
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
 
 @media print {
   body {
     background-color: #FFF;
   }
 
+    table{
+   border: 1px solid black;
+}
+    
   #container {
     width: auto;
     margin: 0;
@@ -150,6 +163,7 @@ input {
   
   #line_items {
     page-break-before: always;
+    page-break-after: always;
   }
   
   #pdf_link {

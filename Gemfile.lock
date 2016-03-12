@@ -81,8 +81,6 @@ GEM
     guard-minitest (2.3.1)
       guard (~> 2.0)
       minitest (>= 3.0)
-    highcharts-rails (4.1.9)
-      railties (>= 3.1)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -221,7 +219,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   groupdate (~> 2.1.1)
   guard-minitest (= 2.3.1)
-  highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails

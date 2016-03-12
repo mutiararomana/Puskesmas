@@ -5,6 +5,7 @@ class PolisController < ApplicationController
   # GET /polis.json
   def index
     @polis = Poli.all
+
   end
 
   # GET /polis/1

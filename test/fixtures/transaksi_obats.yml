@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  obat_id: 1
+  jumlah_masuk: 1
+  jumlah_ambil: 1
+  penerimaan: MyString
+  pemakaian: MyString
+
+two:
+  obat_id: 1
+  jumlah_masuk: 1
+  jumlah_ambil: 1
+  penerimaan: MyString
+  pemakaian: MyString

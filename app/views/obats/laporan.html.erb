@@ -1,5 +1,5 @@
-<div class="pull-right"
-<%= form_tag reseps_path, method: :get do %>
+<div class="pull-right">
+<%= form_tag lb2_path, method: :get do %>
     <div class="input-group">
         <div class="input-group-addon">
     
@@ -41,25 +41,31 @@
 <% end %>
 </div>
 
-<table class="table">
+<br>
+<%= link_to "Cetak Laporan", cetak_lb2_path(:format => "pdf", :bulan => params[:bulan], :tahun => params[:tahun]), :target => "_blank" %>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Nama Obat</th>
-      <th>Stok Awal</th>
+      <th rowspan="2">Nama Obat</th>
+      <th rowspan="2">Stok Awal</th>
+      <th colspan="5">Penerimaan</th>
+      <th rowspan="2">Persediaan</th>
+      <th colspan="3">Pemakaian</th>
+      <th rowspan="2">Jumlah Pemakaian</th>
+      <th rowspan="2">Stok Akhir</th>
+      <th rowspan="2">Harga</th>
+      <th rowspan="2">Ket</th>
+      </tr>
+      <tr>
       <th>PKD</th>
       <th>ASK</th>
       <th>DAK</th>
       <th>PROGR</th>
       <th>POSKEL</th>
-      <th>Persediaan</th>
       <th>PKM</th>
       <th>PUSTU</th>
       <th>POSKESKEL</th>
-      <th>Jumlah Pemakaian</th>
-      <th>Stok Akhir</th>
-      <th>Harga</th>
-      <th>Ket</th>
-      <th colspan="3"></th>
+
     </tr>
   </thead>
 
@@ -78,7 +84,7 @@
           <td><%= resep.dak %></td>
           <td><%= resep.progr %></td>
           <td><%= resep.poskel %></td>
-          <td><%= resep.stok_awal%></td>
+          <td><%= resep.jumlah_masuk%></td>
           <td><%= resep.pkm %></td>
           <td><%= resep.pustu %></td>
           <td><%= resep.poskeskel %></td>
@@ -98,4 +104,10 @@
     
   </tbody>
 </table>
+
+<%#<% @reseps.each do |r| %>
+<%#<%= r.nama %>
+<%#<%= r.jm %>
+<%#<%= r.ja %>
+<%#<% end %>
 

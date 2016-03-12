@@ -2,8 +2,8 @@ class Pasien < ActiveRecord::Base
   belongs_to :kelurahan
   belongs_to :kategori
   belongs_to :jenis_kartu
-    has_many :rekam_mediks
-    has_many :kunjungans
+    has_many :rekam_mediks, dependent: :destroy
+    has_many :kunjungans, dependent: :destroy
 #    after_save :umur_pasien
     
     def self.search(search)

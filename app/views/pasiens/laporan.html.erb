@@ -1,5 +1,5 @@
-<div class="pull-right"
-<%= form_tag reseps_path, method: :get do %>
+<div class="pull-right">
+<%= form_tag lb1_path, method: :get do %>
     <div class="input-group">
         <div class="input-group-addon">
     
@@ -39,9 +39,11 @@
     </div>
     <%= submit_tag 'Search', class: 'btn search-button' %>
 <% end %>
-</div>
+    <br>
 
-<table class="table">
+</div>
+<%= link_to "Cetak Laporan", cetak_lb1_path(:format => "pdf", :bulan => params[:bulan], :tahun => params[:tahun]), :target => "_blank" %>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th rowspan="4">No</th>
@@ -49,7 +51,6 @@
       <th rowspan="4">Jenis Penyakit</th>
       <th colspan="36">Jumlah Penderita</th>
       <th colspan="4">Total</th>
-
       </tr>
       <tr>
       <td colspan="4"><1 Th</td>
@@ -177,11 +178,16 @@
           <td><%= pasien.j34 %></td>
           <td><%= pasien.j35 %></td>
           <td><%= pasien.j36 %></td>
+          <td><%= pasien.j37 %></td>
+          <td><%= pasien.j38 %></td>
+          <td><%= pasien.j39 %></td>
+          <td><%= pasien.j40 %></td>
 
                     
           <% end %>
 
         <td><%#<%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          
       </tr>
 
     

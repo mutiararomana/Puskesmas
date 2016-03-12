@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  resources :transaksi_obats
   resources :obat_masuks
   resources :reseps
   resources :rekam_mediks
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
     get 'cetak_rekam_medik' => 'pasiens#rekam_medik'
     get 'lb2' => 'obats#laporan'
     get 'lb1' => 'pasiens#laporan'
+    get 'cetak_lb1' => 'pasiens#cetak_laporan'
+    get 'cetak_lb2' => 'obats#cetak_laporan'
   resources :admins
 
 end

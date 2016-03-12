@@ -1,6 +1,6 @@
 class JenisPenyakitsController < ApplicationController
   before_action :set_jenis_penyakit, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :update, :destroy, :index, :show, :edit]
 
   # GET /jenis_penyakits
   # GET /jenis_penyakits.json

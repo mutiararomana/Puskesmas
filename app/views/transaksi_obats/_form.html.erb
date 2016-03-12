@@ -1,0 +1,15 @@
+<%= simple_form_for(@transaksi_obat) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :obat_id %>
+    <%= f.input :jumlah_masuk %>
+    <%= f.input :jumlah_ambil %>
+    <%= f.input :penerimaan %>
+    <%= f.input :pemakaian %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
