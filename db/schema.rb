@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312110604) do
+ActiveRecord::Schema.define(version: 20160322104258) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username",        limit: 255
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20160312110604) do
   create_table "cobaPolis", id: false, force: :cascade do |t|
     t.integer "id",   limit: 4,   default: 0, null: false
     t.string  "nama", limit: 255
+  end
+
+  create_table "dokters", force: :cascade do |t|
+    t.string   "nama",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "jenis_kartus", force: :cascade do |t|
@@ -70,6 +76,14 @@ ActiveRecord::Schema.define(version: 20160312110604) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "kunjungan_mediks", force: :cascade do |t|
+    t.integer  "pasien_id",   limit: 4
+    t.integer  "penyakit_id", limit: 4
+    t.string   "kunjungan",   limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "kunjungans", force: :cascade do |t|
     t.string   "nama",        limit: 255
     t.string   "kunjungan",   limit: 255
@@ -102,6 +116,7 @@ ActiveRecord::Schema.define(version: 20160312110604) do
     t.datetime "updated_at",             null: false
     t.string   "kode",       limit: 255
     t.string   "pemakaian",  limit: 255
+    t.string   "satuan",     limit: 255
   end
 
   create_table "pasiens", force: :cascade do |t|
@@ -118,6 +133,7 @@ ActiveRecord::Schema.define(version: 20160312110604) do
     t.string   "status",         limit: 255
     t.string   "no_rm",          limit: 255
     t.date     "tanggal_lahir"
+    t.integer  "dokter_id",      limit: 4
   end
 
   add_index "pasiens", ["jenis_kartu_id"], name: "index_pasiens_on_jenis_kartu_id", using: :btree
@@ -150,6 +166,7 @@ ActiveRecord::Schema.define(version: 20160312110604) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "pasien_id",   limit: 4
+    t.integer  "dokter_id",   limit: 4
   end
 
   add_index "rekam_mediks", ["kartu_rm_id"], name: "index_rekam_mediks_on_kartu_rm_id", using: :btree

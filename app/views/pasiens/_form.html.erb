@@ -1,29 +1,85 @@
-
-
-<%= simple_form_for(@pasien) do |f| %>
+<div class="col-md-6 col-md-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Pasien Baru</h3>
+  </div>
+  <div class="panel-body">
+   
+      
+    <%= simple_form_for(@pasien) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :no_rm %>
     <%#<%= f.association :kartu_rm, selected: params[:no_rm], label_method: :no_rm, value_method: :id %>
-    <%= f.input :nama %>
-    <%= f.label :status %><br>
-    <%= f.radio_button :status, 'kepala' %> Kepala keluarga
-    <%= f.radio_button :status, 'anggota' %> Anggota keluarga
+    <%= f.input :nama %><br>
+    
+    <%#<%= f.input  :collection => [[Kepala, 'Kepala Keluarga'], [Anggota, 'Anggota Keluarga']], :label_method => :last, :value_method => :first, :as => :radio_buttons, :item_wrapper_class => 'inline'a %>
+
+    <ul class="list-inline">
+            <li>
+                <%= f.label :status %>
+            </li>
+            <li>
+                Kepala keluarga
+            </li>
+            <li>
+                <%= f.radio_button :status, 'Kepala' %>
+            </li>
+            <li>
+                Anggota keluarga
+            </li>
+            <li>
+                <%= f.radio_button :status, 'Anggota' %>
+            </li>
+        </ul>
+
+            
     <%= f.input :alamat %>
     <%= f.association :kelurahan, label_method: :nama %>
     <%= f.label :tanggal_lahir %><br>
-    <%= f.date_select :tanggal_lahir, :start_year => Time.now.year - 100, :end_year => Time.now.year %>
-    <%= f.label :jenis_kelamin %><br>
-    <%= f.radio_button :jenis_kelamin, 'L' %> L
-    <%= f.radio_button :jenis_kelamin, 'P' %> P
+    <%= f.date_select :tanggal_lahir, :start_year => Time.now.year - 100, :end_year => Time.now.year, :html_options => {:class => "date-select"} %><br>
+      <br>
+    
+        <ul class="list-inline">
+            <li>
+                <%= f.label :jenis_kelamin %>
+            </li>
+            <li>
+                L
+            </li>
+            <li>
+                <%= f.radio_button :jenis_kelamin, 'L' %>
+            </li>
+            <li>
+                P
+            </li>
+            <li>
+                <%= f.radio_button :jenis_kelamin, 'P' %>
+            </li>
+        </ul>
     <%= f.association :kategori, label_method: :nama %>
     <%= f.association :jenis_kartu, label_method: :nama %>
     <%= f.input :no_kartu %>
 
   </div>
-
+<br>
   <div class="form-actions">
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-primary", value:"Tambah Pasien" %>
   </div>
 <% end %>
+
+      
+      
+      
+      
+      
+      
+      
+  </div>
+</div>
+
+</div>
+
+
+

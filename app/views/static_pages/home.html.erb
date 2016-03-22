@@ -7,11 +7,11 @@
 
 <div class="row">
   <!-- Column Chart --> 
-  <div class="col-xs-6">
+  <div class="col-xs-7">
     <h3>10 Penyakit Terbanyak</h3>
-      <%= column_chart @pasiens.count %>
+      <%= column_chart @pasiens.count, :library => {:colors => ["#1B9A00"]} %>
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-5">
     <h3>Daftar Obat</h3>
     <table class="table">
       <thead>

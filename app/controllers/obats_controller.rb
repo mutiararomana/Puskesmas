@@ -140,6 +140,6 @@ class ObatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def obat_params
-        params.require(:obat).permit(:nama, :kode, :stok_awal, :stok, :harga)
+        params.require(:obat).permit(:nama, :kode, :stok_awal, :stok, :harga, :satuan)
     end
 end

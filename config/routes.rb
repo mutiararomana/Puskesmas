@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  resources :dokters
   resources :transaksi_obats
   resources :obat_masuks
   resources :reseps

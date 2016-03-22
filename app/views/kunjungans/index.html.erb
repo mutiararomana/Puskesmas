@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <div class="row">
 <h1>Daftar Kunjungan</h1>
@@ -16,8 +15,9 @@
     <% end %>
 </div>
     </div>
+<br>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Tanggal</th>
@@ -31,7 +31,7 @@
       <th>Kategori</th>
       <th>Jenis kartu</th>
       <th>No kartu</th>
-      <th colspan="3"></th>
+      <th colspan="2">Aksi</th>
     </tr>
   </thead>
 
@@ -40,7 +40,7 @@
       <tr>
         <td><%= kunjungan.created_at.to_date %></td>
         <td><%= kunjungan.pasien.no_rm %></td>
-        <td><%= kunjungan.nama %></td>
+          <td><%= kunjungan.pasien.nama %></td>
           <td><%= kunjungan.pasien.umur %></td>
           <td><%= kunjungan.pasien.jenis_kelamin %></td>
         <td><%= kunjungan.kunjungan %></td>
@@ -57,7 +57,7 @@
         <% else %>
           <td>-</td>
           <% end %>
-        <td><%= link_to 'Show', kunjungan %></td>
+        <%#<%= link_to 'Show', kunjungan %>
         <td><%= link_to 'Edit', edit_kunjungan_path(kunjungan) %></td>
         <td><%= link_to 'Destroy', kunjungan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -67,4 +67,4 @@
 
 <br>
 
-<%= link_to 'New Kunjungan', new_kunjungan_path %>
+<%#<%= link_to 'New Kunjungan', new_kunjungan_path %>

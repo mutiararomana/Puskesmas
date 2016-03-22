@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Daftar Obat</h1>
+<h1>Daftar Obat</h1><br>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Kode</th>
@@ -10,7 +9,7 @@
       <th>Stok awal</th>
       <th>Stok</th>
       <th>Harga</th>
-      <th colspan="3"></th>
+      <th colspan="2">Aksi</th>
     </tr>
   </thead>
 
@@ -22,7 +21,7 @@
         <td><%= obat.stok_awal %></td>
         <td><%= obat.stok %></td>
         <td><%= obat.harga %></td>
-        <td><%= link_to 'Show', obat %></td>
+        <%#<%= link_to 'Show', obat %>
         <td><%= link_to 'Edit', edit_obat_path(obat) %></td>
         <td><%= link_to 'Destroy', obat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -32,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Obat', new_obat_path %>
+<%#<%= link_to 'New Obat', new_obat_path %>

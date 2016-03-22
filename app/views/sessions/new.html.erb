@@ -1,7 +1,13 @@
+<div class="col-md-6 col-md-offset-3">
+<div class="panel panel-default" style="width: 500px; margin-top: 150px;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login</h3>
+  </div>
+  <div class="panel-body">
+
+
 <% provide(:title, "Log in") %>
 
-<h1>Selamat datang di website Puskesmas Kampung Sawah</h1>
-<h2>Log In</h2>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(:session, url: login_path) do |f| %>
@@ -17,36 +23,12 @@
 
     </div>
 </div>
+</div>
+      
+
+</div>
+</div>
+
+
     
-<%#<%= form_tag sessions_path do %>
-<%#<div class="field">%>
-<%#<%= label_tag :email %><br>
-<%#<%= text_field_tag :email %>
-<%#</div>%>
-<%#  <div class="field">%>
-<%#    <%= label_tag :password %><br>
-<%#<%= password_field_tag :password %>
-<%#</div>%>
-<%#  <div class="actions">%>
-<%#    <%= submit_tag "Log In" %>
-<%#</div>%>
-<%#<% end %>
-<%#<div>%>
-    <%#<% if flash[:alert] %>
-    <%#<p id ="notice"><%= flash[:alert] %></p>
-    <%#<% end %>
-    <%#<%= form_tag do %>
-    <%#<fieldset>%>
-        <%#<legend>Please Log In</legend>%>
-        <%#<div>%>
-            <%#<%= label_tag :username, 'Username' %>
-            <%#<%= text_field_tag :username, params[:username] %>
-            <%#<%= label_tag :password, 'Password' %>
-            <%#<%= text_field_tag :password, params[:password] %>
-        <%#</div>%>
-        <%#<div>%>
-            <%#<%= submit_tag "Login" %>
-        <%#</div>%>
-    <%#</fieldset>%>
-    <%#<% end %>
-<%#</div>%>
+

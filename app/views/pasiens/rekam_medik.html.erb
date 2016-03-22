@@ -1,26 +1,25 @@
-<h3> Puskesmas Kampung Sawah</h3>
-<h4> Bandar Lampung </h4>
+<h3 style="text-align: center;"> Puskesmas Kampung Sawah</h3>
+<h4 style="text-align: center;"> Bandar Lampung </h4><br>
 
 <div class="pull-center">
-<h2> Kartu Status Pasien </h2>
+<h2 style="text-align: center;"> Kartu Status Pasien </h2>
 </div>
 
  No RM : <%= @pasien.no_rm %> <br>
  Nama : <%= @pasien.nama %> <br>
  Umur : <%= @pasien.umur %> <br>
 Jenis Kelamin : <%= @pasien.jenis_kelamin %> <br>
-
+ <br>
 <% if @pasien.rekam_mediks.any? %>
-
-<table class="table">
+<div class="col-md-6 col-md-offset-2">
+<table class="table" align="center" style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black">
   <thead>
     <tr>
-      <th>Tanggal</th>
-      <th>Keluhan</th>
-      <th>Penyakit</th>
-      <th>Terapi</th>
-      <th>Tindakan</th>
-      <th colspan="3"></th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">Tanggal</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">Keluhan</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">Penyakit</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">Terapi</th>
+      <th style="border-bottom: 1px solid black;">Tindakan</th>
     </tr>
   </thead>
 
@@ -28,14 +27,15 @@ Jenis Kelamin : <%= @pasien.jenis_kelamin %> <br>
 <% @pasien.rekam_mediks.each do |rm| %>
       
       <tr>
-          <td><%= rm.created_at.to_date.to_s %></td>
-          <td><%= rm.keluhan %></td>
-          <td><%= rm.penyakit.nama %></td>
-          <td><%= rm.terapi %></td>
-          <td><%= rm.tindakan %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= rm.created_at.to_date.to_s %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= rm.keluhan %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= rm.penyakit.nama %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= rm.terapi %></td>
+          <td style="border-bottom: 1px solid black;"><%= rm.tindakan %></td>
           <% end %>
       </tr>
     </tbody>
 </table>
+</div>
 <% end %>
 

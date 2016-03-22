@@ -1,25 +1,26 @@
-<table class="table table-bordered">
+<h2 style="text-align: center">Laporan Pemakaian dan Lembar Permintaan (PLPO)</h2><br>
+<table class="table" style="border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black">
   <thead>
     <tr>
-      <th rowspan="2">Nama Obat</th>
-      <th rowspan="2">Stok Awal</th>
-      <th colspan="5">Penerimaan</th>
-      <th rowspan="2">Persediaan</th>
-      <th colspan="3">Pemakaian</th>
-      <th rowspan="2">Jumlah Pemakaian</th>
-      <th rowspan="2">Stok Akhir</th>
-      <th rowspan="2">Harga</th>
-      <th rowspan="2">Ket</th>
+      <th rowspan="2" style="border-bottom: 1px solid black; border-right: 1px solid black">Nama Obat</th>
+      <th rowspan="2" style="border-bottom: 1px solid black; border-right: 1px solid black">Stok Awal</th>
+      <th colspan="5" style="border-bottom: 1px solid black; border-right: 1px solid black">Penerimaan</th>
+      <th rowspan="2" style="border-bottom: 1px solid black; border-right: 1px solid black">Persediaan</th>
+      <th colspan="3" style="border-bottom: 1px solid black; border-right: 1px solid black">Pemakaian</th>
+      <th rowspan="2" style="border-bottom: 1px solid black; border-right: 1px solid black">Jumlah Pemakaian</th>
+      <th rowspan="2" style="border-bottom: 1px solid black; border-right: 1px solid black">Stok Akhir</th>
+      <th rowspan="2" style="border-bottom: 1px solid black; border-right: 1px solid black">Harga</th>
+      <th rowspan="2" style="border-bottom: 1px solid black">Ket</th>
       </tr>
       <tr>
-      <th>PKD</th>
-      <th>ASK</th>
-      <th>DAK</th>
-      <th>PROGR</th>
-      <th>POSKEL</th>
-      <th>PKM</th>
-      <th>PUSTU</th>
-      <th>POSKESKEL</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">PKD</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">ASK</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">DAK</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">PROGR</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">POSKEL</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">PKM</th>
+      <th style="border-bottom: 1px solid black; border-right: 1px solid black">PUSTU</th>
+      <th style="border-bottom: 1px solid black ; border-right: 1px solid black">POSKESKEL</th>
 
     </tr>
   </thead>
@@ -32,20 +33,21 @@
           
           
           
-          <td><%= resep.nama %></td>
-          <td><%= resep.stok_awal %></td>
-          <td><%= resep.pkd %></td>
-          <td><%= resep.ask %></td>
-          <td><%= resep.dak %></td>
-          <td><%= resep.progr %></td>
-          <td><%= resep.poskel %></td>
-          <td><%= resep.jumlah_masuk%></td>
-          <td><%= resep.pkm %></td>
-          <td><%= resep.pustu %></td>
-          <td><%= resep.poskeskel %></td>
-          <td><%= resep.jumlah_ambil %></td>
-          <td><%= resep.stok %></td>
-          <td><%= resep.harga %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.nama %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.stok_awal %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.pkd %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.ask %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.dak %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.progr %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.poskel %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.jumlah_masuk%></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.pkm %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.pustu %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.poskeskel %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.jumlah_ambil %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.stok %></td>
+          <td style="border-bottom: 1px solid black; border-right: 1px solid black"><%= resep.harga %></td>
+          <td style="border-bottom: 1px solid black"><%= "" %></td>
 
                     
           <% end %>

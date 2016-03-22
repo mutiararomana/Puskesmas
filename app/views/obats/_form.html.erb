@@ -1,3 +1,11 @@
+<div class="col-md-6 col-md-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Entri Obat</h3>
+  </div>
+  <div class="panel-body">
+
+
 <%= simple_form_for(@obat) do |f| %>
   <% if @obat.errors.any? %>
     <div id="error_explanation">
@@ -24,15 +32,24 @@
     <%= f.number_field :stok_awal %>
   </div>
 <!--  <div class="field">-->
-    <%#<%= f.label :stok %><br>
+    <%#<%= f.label :stok %>
     <%#<%= f.number_field :stok %>
 <!--  </div>-->
-
+  <div class="field">
+    <%= f.label :satuan %><br>
+    <%= f.text_field :satuan %>
+  </div>
   <div class="field">
     <%= f.label :harga %><br>
     <%= f.number_field :harga %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Tambah Obat", class: "btn btn-primary" %>
   </div>
 <% end %>
+      
+
+</div>
+</div>
+
+</div>

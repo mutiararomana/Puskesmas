@@ -1,22 +1,59 @@
 <% if params[:search] %>
 
-<% @obats.each do |obat| %>
-    <div>
-        <%= obat.kode %>
-        <%= obat.nama %>
-        <%= obat.stok %>
-        <%= link_to 'Tambah', new_resep_path(nama: obat) %>
-    
-    </div>
-<% end %>
+    <table class="table table-bordered">
+      <thead vertical-align="middle">
+        <tr>
+          <th>Kode</th>
+          <th>Nama Obat</th>
+          <th>Stok</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @obats.each do |obat| %>
+            <tr>
+            <td><%= obat.kode %></td>
+            <td><%= obat.nama %></td>
+            <td><%= obat.stok %></td>
+            <td><%= link_to 'Tambah', new_resep_path(nama: obat) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+
+
 
 <% else %>
 
 <%= form_tag(search_obat_keluar_path, :method => "get",  role: "search") do %>
+<div class="pull-right">
 <div class="form-group">
 <%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search Obat" %>
 <%= submit_tag "Search", class: 'btn btn-info' %>
 </div>
+</div>
+
+    <table class="table table-bordered">
+      <thead vertical-align="middle">
+        <tr>
+          <th>Kode</th>
+          <th>Nama Obat</th>
+          <th>Stok</th>
+            <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @obats.each do |obat| %>
+            <tr>
+            <td><%= obat.kode %></td>
+            <td><%= obat.nama %></td>
+            <td><%= obat.stok %></td>
+            <td><%= link_to 'Tambah', new_resep_path(nama: obat) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+    </table>
+
 <% end %>
 <% end %>
 

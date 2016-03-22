@@ -1,3 +1,10 @@
+<div class="col-md-6 col-md-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Entri Obat Keluar</h3>
+  </div>
+  <div class="panel-body">
+
 <%= simple_form_for(@resep) do |f| %>
   <%= f.error_notification %>
 
@@ -5,11 +12,24 @@
     <%= f.association :obat, selected: params[:nama], label_method: :nama, value_method: :id %>
     <%= f.input :jumlah_ambil %>
   </div>
-<%= f.label :pemakaian %><br>
-<%= f.radio_button :pemakaian, 'PKM' %> PKM
-<%= f.radio_button :pemakaian, 'PUSTU' %> PUSTU
-<%= f.radio_button :pemakaian, 'POSKESKEL' %> POSKESKEL
+<br>
+        <ul class="list-inline">
+            <li><%= f.label :pemakaian %></li>
+            <li>PKM</li>
+            <li><%= f.radio_button :pemakaian, 'PKM' %></li>
+            <li>PUSTU</li>
+            <li><%= f.radio_button :pemakaian, 'PUSTU' %></li>
+            <li>POSKESKEL</li>
+            <li><%= f.radio_button :pemakaian, 'POSKESKEL' %></li>
+        </ul>
+<br>
   <div class="form-actions">
-    <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-primary", value:"Tambah Obat Keluar" %>
   </div>
 <% end %>
+      
+      
+</div>
+</div>
+
+</div>

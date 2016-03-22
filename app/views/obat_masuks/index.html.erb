@@ -1,26 +1,26 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Obat Masuks</h1>
+<h1>Daftar Obat Masuk</h1><br>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Obat</th>
+      <th>Kode Obat</th>
+      <th>Nama Obat</th>
       <th>Jumlah masuk</th>
       <th>Penerimaan</th>
-      <th colspan="3"></th>
+      <th colspan="2">Aksi</th>
     </tr>
   </thead>
 
   <tbody>
     <% @obat_masuks.each do |obat_masuk| %>
       <tr>
+        <td><%= obat_masuk.obat.kode %></td>
         <td><%= obat_masuk.obat.nama %></td>
         <td><%= obat_masuk.jumlah_masuk %></td>
         <td><%= obat_masuk.penerimaan %></td>
-        <td><%= link_to 'Show', obat_masuk %></td>
         <td><%= link_to 'Edit', edit_obat_masuk_path(obat_masuk) %></td>
-        <td><%= link_to 'Destroy', obat_masuk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', obat_masuk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Obat masuk', new_obat_masuk_path %>
+<%#<%= link_to 'New Obat masuk', new_obat_masuk_path %>

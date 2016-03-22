@@ -72,6 +72,6 @@ class RekamMediksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rekam_medik_params
-        params.require(:rekam_medik).permit(:pasien_id, :nama, :keluhan, :penyakit_id, :terapi, :tindakan)
+        params.require(:rekam_medik).permit(:pasien_id, :nama, :keluhan, :penyakit_id, :terapi, :tindakan, :dokter_id)
     end
 end

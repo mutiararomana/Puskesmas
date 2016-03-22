@@ -1,7 +1,12 @@
-<p id="notice"><%= notice %></p>
 <div class="row">
 <div class="col-md-4">
-    <h4>Keluarga Pasien</h4>
+    
+<div class="panel panel-default" style="width: 350px;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Keluarga Pasien</h3>
+  </div>
+  <div class="panel-body">
+    
     <div class="row">
         <div class="col-md-7">
             <p><strong>Nama</strong></p>
@@ -18,8 +23,16 @@
             <% end %>
         </div>
     </div><br>
+    </div>
+    </div>
     
-    <h4>Data Pasien</h4>
+    
+    <div class="panel panel-default" style="width: 350px;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Data Pasien</h3>
+  </div>
+  <div class="panel-body">
+    
     <div class="row">
         <div class="col-md-4">
             <p><strong>No RM</strong></p>
@@ -53,14 +66,19 @@
     
 </div> 
 
-
+    </div>
+    </div>
+        
 <div class="col-md-8">
 <h4>Rekam Medik Pasien</h4>
     
     <div>
         <%= link_to 'Tambah rekam medik', new_rekam_medik_path(no_rm: @pasien) %>
     
-    </div>
+        <div class="pull-right">
+        <%= link_to "Cetak Rekam Medik", cetak_rekam_medik_path(id: @pasien, :format => "pdf"), :target => "_blank" %>
+        </div>
+    </div><br>
 
 <% if @pasien.rekam_mediks.any? %>
 
@@ -72,7 +90,8 @@
       <th>Penyakit</th>
       <th>Terapi</th>
       <th>Tindakan</th>
-      <th colspan="3"></th>
+      <th>Dokter</th>
+      <th colspan="2">Aksi</th>
     </tr>
   </thead>
 
@@ -85,6 +104,11 @@
           <td><%= rm.penyakit.nama %></td>
           <td><%= rm.terapi %></td>
           <td><%= rm.tindakan %></td>
+          <% if rm.dokter != nil %>
+          <td><%= rm.dokter.nama %></td>
+          <% else %>
+          <td>-</td>
+          <% end %>
           <td><%= link_to 'Edit', edit_rekam_medik_path(rm.id) %></td>
           <td><%= link_to 'Destroy', rm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
@@ -96,7 +120,7 @@
 <% end %>
 <!--<p id="pdf_link"><%#<%= link_to "Download Invoice (PDF)", pasien_path(@pasien, :format => "pdf") %></p>-->
 
-    <%= link_to "Cetak Rekam Medik", cetak_rekam_medik_path(id: @pasien, :format => "pdf") %>
+    
     </div>
 </div>
 <%#<%= link_to 'Edit', edit_pasien_path(@pasien) %> 

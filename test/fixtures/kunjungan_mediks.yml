@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pasien_id: 1
+  penyakit_id: 1
+  kunjungan: MyString
+
+two:
+  pasien_id: 1
+  penyakit_id: 1
+  kunjungan: MyString

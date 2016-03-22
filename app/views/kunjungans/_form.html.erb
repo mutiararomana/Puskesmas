@@ -1,24 +1,53 @@
+<div class="col-md-6 col-md-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Entri Kunjungan</h3>
+  </div>
+  <div class="panel-body">
+      
+      
 <%= simple_form_for(@kunjungan) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :pasien, selected: params[:no_rm], label_method: :no_rm, value_method: :id %>
-    <%= f.input :nama %>
+    <%= f.association :pasien, selected: params[:no_rm], label_method: :nama, value_method: :id %>
+    <%#<%= f.input :nama %> <br>
     <%#<%= f.input :umur %>
     <%#<%= f.label :jenis_kelamin %><!--<br>-->
     <%#<%= f.radio_button :jenis_kelamin, 'L' %> <!--L-->
     <%#<%= f.radio_button :jenis_kelamin, 'P' %> <!--P<br>-->
-    <%= f.label :kunjungan %><br>
-    <%= f.radio_button :kunjungan, 'B' %> B
-    <%= f.radio_button :kunjungan, 'L' %> L
-    <%= f.input :keluhan %>
+        <ul class="list-inline">
+            <li>
+                <%= f.label :kunjungan %>
+            </li>
+            <li>
+                B
+            </li>
+            <li>
+                <%= f.radio_button :kunjungan, 'B' %>
+            </li>
+            <li>
+                L
+            </li>
+            <li>
+                <%= f.radio_button :kunjungan, 'L' %>
+            </li>
+        </ul>
+    <%= f.input :keluhan %><br>
     <%= f.association :poli, label_method: :nama %>
     <%#<%= f.association :kategori, label_method: :nama %>
     <%#<%= f.association :jenis_kartu, label_method: :nama %>
     <%#<%= f.input :no_kartu %>
   </div>
-
+<br>
   <div class="form-actions">
-      <%= f.button :submit, pasien_id: @kunjungan.pasien_id %>
+      <%= f.button :submit, pasien_id: @kunjungan.pasien_id, class: "btn btn-primary", value:"Tambah Kunjungan" %>
   </div>
 <% end %>
+</div>
+    
+    
+  </div>
+</div>
+
+</div>

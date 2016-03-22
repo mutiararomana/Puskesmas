@@ -46,7 +46,6 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th rowspan="4">No</th>
       <th rowspan="4">Nama Penyakit</th>
       <th rowspan="4">Jenis Penyakit</th>
       <th colspan="36">Jumlah Penderita</th>
@@ -136,10 +135,7 @@
 
       <% @pasiens.each do |pasien| %>
       <tr>
-          
-          
-          
-          <td><%= pasien.kode_penyakit %></td>
+
           <td><%= pasien.nama_penyakit %></td>
           <td><%= pasien.jenis_penyakit %></td>
           <td><%= pasien.j1 %></td>
@@ -186,7 +182,7 @@
                     
           <% end %>
 
-        <td><%#<%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<!--        <td><%#<%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
           
       </tr>
 

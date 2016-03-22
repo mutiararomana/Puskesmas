@@ -39,10 +39,13 @@ class AdminsController < ApplicationController
       end
     end
   end
-
+    
   # PATCH/PUT /admins/1
   # PATCH/PUT /admins/1.json
   def update
+      @admin = Admin.find(params[:id])
+      current_password = params[:current_password]
+      if @admin.password = current_password
     respond_to do |format|
       if @admin.update(admin_params)
           format.html { redirect_to root_path, notice: 'Admin was successfully updated.' }
@@ -52,14 +55,18 @@ class AdminsController < ApplicationController
         format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
     end
-      
-      @admin = User.new(admin_params)
-      if @admin.save
-          session[:user_id] = @admin.id
-      redirect_to root_url, notice: 'User was successfully created.'
     else
-      render :new
+        redirect_to edit_admin_path(@admin), allert: 'Current password does not match'
     end
+      
+      
+#      @admin = User.new(admin_params)
+#      if @admin.save
+#          session[:user_id] = @admin.id
+#      redirect_to root_url, notice: 'User was successfully created.'
+#    else
+#      render :new
+#    end
   end
 
   # DELETE /admins/1

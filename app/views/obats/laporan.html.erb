@@ -40,10 +40,14 @@
     <%= submit_tag 'Search', class: 'btn search-button' %>
 <% end %>
 </div>
+<br>
+<br>
+<br>
 
 <br>
 <%= link_to "Cetak Laporan", cetak_lb2_path(:format => "pdf", :bulan => params[:bulan], :tahun => params[:tahun]), :target => "_blank" %>
-<table class="table table-bordered">
+<br>
+<table class="table table-bordered border="1"">
   <thead>
     <tr>
       <th rowspan="2">Nama Obat</th>
@@ -54,7 +58,7 @@
       <th rowspan="2">Jumlah Pemakaian</th>
       <th rowspan="2">Stok Akhir</th>
       <th rowspan="2">Harga</th>
-      <th rowspan="2">Ket</th>
+<!--      <th rowspan="3">Ket</th>-->
       </tr>
       <tr>
       <th>PKD</th>
@@ -96,9 +100,11 @@
           <% end %>
           <%#<%end%>
 
+<!--
         <td><%#<%= link_to 'Show', resep %></td>
         <td><%#<%= link_to 'Edit', edit_resep_path(resep) %></td>
         <td><%#<%= link_to 'Destroy', resep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
       </tr>
 
     

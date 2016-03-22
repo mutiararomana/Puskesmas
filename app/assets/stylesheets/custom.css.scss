@@ -53,7 +53,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #fff !important;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -119,6 +119,42 @@ input {
   height: auto !important;
 }
 
+.date-select {
+  width: 20%;
+  margin-right: 10px;
+  float: left;
+}
+
+.list-inline{
+    font-size: inherit;
+}
+#pasien_tanggal_lahir_1i {
+    width: 20%;
+    display: inline
+}
+#pasien_tanggal_lahir_2i {
+    width: 20%;
+    display: inline
+}
+#pasien_tanggal_lahir_3i {
+    width: 20%;
+    display: inline
+}
+select{
+    display: inline
+}
+.select-date-wrapper{
+  select:first-of-type{
+    width: 45%;
+  }
+  select:nth-of-type(2){
+    width: 20%;
+  }
+  select:last-of-type{
+    margin-right: 0;
+  }
+}
+
 /* forms */
 #error_explanation {
   color: red;
@@ -129,13 +165,23 @@ input {
 }
 
 .field_with_errors {
+    background-color: #E31532;
+    color: white;
+    input, select {
+        color: black;
+        background-color: white;
+    }
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
   }
 }
 
-tr {
+.form-control{
+    border-radius: 0px !important;
+}
+
+td {
   text-align: center;
   vertical-align: middle;
 }
@@ -144,19 +190,79 @@ th {
   vertical-align: middle;
 }
 
+.table > thead:first-child > tr:first-child > th{
+    background-color: #1B9A00;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.navbar-custom {
+    background-color: #235718 !important;
+    border-color: #235718 !important;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: white !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: #235718 !important;
+    background-color: #D1E6CC !important;
+}
+
+.btn{
+    background-color: #1B9A00 !important;
+    border-color: #1B9A00 !important;
+    border-radius: 0px !important;
+    color: white;
+}
+
+.btn-info{
+    width: 100px;
+}
+
+a{
+    color: green !important;
+}
+
+a:hover{
+    background-color: transparent !important;
+}
+
+.container .jumbotron{
+    background-color: transparent !important;
+    border-radius: 0px !important;
+    border-bottom: 3px solid #235718 !important;
+}
+
+.panel {
+    width: 750px;
+    margin-top: 20px;
+    
+}
+.panel-heading {
+        background-color: #1B9A00 !important;
+        color: white !important;
+        text-align: center;
+}
+
+.panel-title {
+    font-weight: 800;
+}
 
 @media print {
   body {
     background-color: #FFF;
   }
 
-    table{
+   table{
    border: 1px solid black;
-}
+   } 
     
   #container {
     width: auto;
-    margin: 0;
+    margin: 5;
     padding: 0;
     border: none;
   }

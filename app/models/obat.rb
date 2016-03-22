@@ -3,6 +3,8 @@ class Obat < ActiveRecord::Base
     has_many :obat_masuks, dependent: :destroy
     has_many :transaksi_obats, dependent: :destroy
     validates :stok_awal, presence: true
+    validates :nama, presence: true
+    validates :kode, presence: true
     
     before_create :set_stok
 #    after_commit :laporan

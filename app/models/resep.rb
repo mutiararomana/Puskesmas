@@ -2,6 +2,9 @@ class Resep < ActiveRecord::Base
   belongs_to :obat
     after_save :update_obat_stok
     after_create :new_transaksi_obat
+    validates :jumlah_ambil, presence: true
+    validates :pemakaian, presence: true
+
     
     def update_obat_stok
         if (b = Obat.where(:id => self.obat_id).first)

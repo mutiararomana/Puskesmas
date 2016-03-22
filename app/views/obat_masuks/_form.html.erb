@@ -1,19 +1,40 @@
+<div class="col-md-6 col-md-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Entri Obat Masuk</h3>
+  </div>
+  <div class="panel-body">
+
 <%= simple_form_for(@obat_masuk) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.association :obat, selected: params[:nama], label_method: :nama, value_method: :id %>
-    <%= f.input :jumlah_masuk %>
-      <%= f.label :penerimaan %><br>
-      <%= f.radio_button :penerimaan, 'PKD' %> PKD
-      <%= f.radio_button :penerimaan, 'DAK' %> DAK
-      <%= f.radio_button :penerimaan, 'ASK' %> ASK
-      <%= f.radio_button :penerimaan, 'PROGR' %> PROGR
-      <%= f.radio_button :penerimaan, 'POSKEL' %> POSKEL
+    <%= f.input :jumlah_masuk %><br>
+        <ul class="list-inline">
+            <li><%= f.label :penerimaan %></li>
+            <li>PKD</li>
+            <li><%= f.radio_button :penerimaan, 'PKD' %></li>
+            <li>DAK</li>
+            <li><%= f.radio_button :penerimaan, 'DAK' %></li>
+            <li>ASK</li>
+            <li><%= f.radio_button :penerimaan, 'ASK' %></li>
+            <li>PROGR</li>
+            <li><%= f.radio_button :penerimaan, 'PROGR' %></li>
+            <li>POSKEL</li>
+            <li><%= f.radio_button :penerimaan, 'POSKEL' %></li>
+        </ul>
       
   </div>
+<br>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary", value:"Tambah Obat Masuk" %>
   </div>
 <% end %>
+
+      
+  </div>
+</div>
+
+</div>
